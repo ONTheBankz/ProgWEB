@@ -15,7 +15,7 @@ export class FirestoreService {
   }
 
   checkUserExists(email: string, password: string): Observable<any[]> {
-    const usersRef = collection(this.firestore, 'user');
+    const usersRef = collection(this.firestore, 'login');
     const q = query(usersRef, where('email', '==', email), where('password', '==', password));
     return collectionData(q, { idField: 'id' }) as Observable<any[]>;
   }
