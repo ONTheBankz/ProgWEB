@@ -62,7 +62,7 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   loadFirestoreData(): void {
-    this.firestoreService.getCollectionData('login').subscribe(data => {
+    this.firestoreService.getCollectionData('user').subscribe(data => {
       this.collectionData = data;
       console.log(data);
     });
