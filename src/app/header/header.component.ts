@@ -2,15 +2,17 @@ import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { FirestoreService } from '../services/firestore.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router'; // Adicione RouterModule
+import { Router, RouterModule } from '@angular/router'; 
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule] // Certifique-se de importar o RouterModule
+  imports: [CommonModule, FormsModule, RouterModule, RouterLink, RouterOutlet] 
 })
 
 export class HeaderComponent implements AfterViewInit {
