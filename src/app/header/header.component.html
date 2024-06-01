@@ -1,7 +1,7 @@
 <header class="header" id="header">
-    <nav class="nav container">
+  <nav class="nav container">
       <a routerLink="/home" class="nav__logo">
-        <img src="assets/logo1.png" class="nav__logo-img">
+          <img src="assets/logo1.png" class="nav__logo-img">
       </a>
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
@@ -18,35 +18,50 @@
             <a href="#" class="nav__link">Bilhetes</a>
           </li>
         </ul>
+          <ul class="nav__list">
+              <li class="nav__item"><a href="museum.php" class="nav__link">Museus</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Obras</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Eventos</a></li>
+              <li class="nav__item"><a href="#" class="nav__link">Bilhetes</a></li>
+          </ul>
       </div>
       <div class="nav__actions">
-        <i class="ri-user-line nav__login" id="login-btn"></i>
+          <!-- Dropdown Trigger -->
+          <div class="nav__profile" *ngIf="authService.getAuthStatus() | async">
+              <i class="ri-user-line" id="profile-btn"></i>
+              <!-- Dropdown Menu -->
+              <div class="profile-dropdown">
+                  <a routerLink="/profile" class="dropdown-link">Perfil</a>
+                  <a (click)="logout()" class="dropdown-link">Logout</a>
+              </div>
+          </div>
+          <i class="ri-user-line nav__login" id="login-btn" *ngIf="!(authService.getAuthStatus() | async)"></i>
       </div>
-    </nav>
-  </header>
-  
-  <!--==================== LOGIN ====================-->
-  <div class="login" id="login">
-    <form (ngSubmit)="onSubmitLogin()" class="login__form">
-      <h2 class="login__title">Iniciar Sessão</h2>
-      <div class="login__group">
-        <div>
-          <label for="email" class="login__label">Email</label>
-          <input type="email" [(ngModel)]="email" name="email" placeholder="Insira o seu email." id="email" class="login__input">
-        </div>
-        <div>
-          <label for="password" class="login__label">Password</label>
-          <input type="password" [(ngModel)]="password" name="password" placeholder="Insira a sua password" id="password" class="login__input">
-        </div>
+  </nav>
+</header>
+
+<!--==================== LOGIN ====================-->
+<div class="login" id="login">
+  <form (ngSubmit)="onSubmitLogin()" class="login__form">
+    <h2 class="login__title">Iniciar Sessão</h2>
+    <div class="login__group">
+      <div>
+        <label for="email" class="login__label">Email</label>
+        <input type="email" [(ngModel)]="email" name="email" placeholder="Insira o seu email." id="email" class="login__input">
       </div>
       <div>
-        <p class="login__signup">
-          Não tem conta? Registe-se <a routerLink="/register">Criar conta</a>
-        </p>
-        <br>
-        <button type="submit" class="login__button">Entrar</button>
-        <p>{{ loginMessage }}</p>
+        <label for="password" class="login__label">Password</label>
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Insira a sua password" id="password" class="login__input">
       </div>
-    </form>
-    <i class="ri-close-line login__close" id="login-close"></i>
-  </div>
+    </div>
+    <div>
+      <p class="login__signup">
+        Não tem conta? Registe-se <a routerLink="/register">Criar conta</a>
+      </p>
+      <br>
+      <button type="submit" class="login__button">Entrar</button>
+      <p>{{ loginMessage }}</p>
+    </div>
+  </form>
+  <i class="ri-close-line login__close" id="login-close"></i>
+</div>

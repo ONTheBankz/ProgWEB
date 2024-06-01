@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router'; 
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -12,13 +14,14 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule, RouterLink, RouterOutlet] 
 })
+
 export class HeaderComponent implements AfterViewInit {
   collectionData: any[] = [];
   email: string = '';
   password: string = '';
   loginMessage: string = '';
 
-  constructor(private el: ElementRef, private firestoreService: FirestoreService, private router: Router) { }
+  constructor(private el: ElementRef, private firestoreService: FirestoreService, private router: Router,  public authService: AuthService) { }
 
   ngAfterViewInit(): void {
     this.setupMenuToggle();
@@ -73,9 +76,17 @@ export class HeaderComponent implements AfterViewInit {
     this.firestoreService.checkUserExists(this.email, this.password).subscribe(users => {
       if (users.length > 0) {
         this.loginMessage = 'Login successful!';
+        this.authService.setAuthStatus(true);
+        this.router.navigate(['/home']);
       } else {
         this.loginMessage = 'Invalid email or password.';
       }
     });
   }
+
+  logout(): void {
+    this.authService.setAuthStatus(false);
+    this.router.navigate(['/']);
+  }
+
 }
