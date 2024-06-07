@@ -6,12 +6,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SubHeaderComponent } from './sub-header/sub-header.component';
 import { MuseusComponent } from './museus/museus.component';
-import { PacoDuquesComponent } from './paco-duques/paco-duques.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, RegisterComponent, HeaderComponent, FooterComponent, SubHeaderComponent, MuseusComponent, PacoDuquesComponent],
+  imports: [RouterOutlet, HomeComponent, RegisterComponent, HeaderComponent, FooterComponent, SubHeaderComponent, MuseusComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
