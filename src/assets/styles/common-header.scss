@@ -131,7 +131,31 @@
     top: 1.15rem;
     right: 1.5rem;
   }
-  
+  .nav__profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+.profile-dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav__profile:hover .profile-dropdown {
+    display: block;
+}
   /*=============== LOGIN ===============*/
   .login__form, 
   .login__group {
