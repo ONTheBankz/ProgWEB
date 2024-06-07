@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { FirestoreService } from '../services/firestore.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,12 +8,12 @@ import { FooterComponent } from '../footer/footer.component';
 import { ReviewComponent } from '../review/review.component';
 
 @Component({
-  selector: 'app-mafra',
+  selector: 'app-diogo-sousa',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule, HeaderComponent, FooterComponent, ReviewComponent],
-  templateUrl: './mafra.component.html',
-  styleUrl: './mafra.component.scss'
+  templateUrl: './diogo-sousa.component.html',
+  styleUrl: './diogo-sousa.component.scss'
 })
-export class MafraComponent {
-}
+export class DiogoSousaComponent {
 
+}

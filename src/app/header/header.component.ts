@@ -25,7 +25,8 @@ export class HeaderComponent implements AfterViewInit, OnInit {
   password: string = '';
   loginMessage: string = '';
   isLoggedIn: boolean = false; // Variável para armazenar o estado de login
-  loggedInName: string = ''; // Variável para armazenar os dados do user logado
+  loggedInName: string = ''; // Variável para armazenar o nome do user logado
+  loggedInEmail: string = ''; // Variável para armazenar o email do user logado
 
   constructor(private el: ElementRef, private firestoreService: FirestoreService, private router: Router,  public authService: AuthService) { }
 
@@ -96,6 +97,7 @@ export class HeaderComponent implements AfterViewInit, OnInit {
     // Remover estado de login e detalhes do user do localStorage
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('loggedInName');
+    localStorage.removeItem('loggedInEmail');
     // Redirecionar para a página inicial
     this.router.navigate(['/home']);
     window.location.reload();
@@ -121,6 +123,12 @@ export class HeaderComponent implements AfterViewInit, OnInit {
           // Armazenar estado de login e detalhes do user no localStorage
           localStorage.setItem('isLoggedIn', JSON.stringify(this.isLoggedIn));
           localStorage.setItem('loggedInName', this.loggedInName);
+          localStorage.setItem('loggedInEmail', this.email); // Armazenar email do user logado
+  
+          // Adicionar um pequeno atraso para garantir que o alerta seja exibido
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000); // Atraso de 1 segundo
         });
       } else {
         console.log('User not found, showing error alert'); // Log para verificar se o user não foi encontrado
