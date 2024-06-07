@@ -9,6 +9,7 @@ import { MuseusComponent } from './museus/museus.component';
 import { PacoDuquesComponent } from './paco-duques/paco-duques.component';
 import { DDiogoSousaComponent } from './d.diogo-sousa/d.diogo-sousa.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
