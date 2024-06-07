@@ -4,14 +4,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router'; // Adicione RouterModule
 import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
-  selector: 'app-museus',
+  selector: 'app-paco-duques',
   standalone: true,
-  templateUrl: './museus.component.html',
-  styleUrl: './museus.component.scss',
-  imports: [CommonModule, FormsModule, RouterModule, HeaderComponent] // Certifique-se de importar o RouterModule
+  imports: [CommonModule, FormsModule, RouterModule, HeaderComponent, FooterComponent],
+  templateUrl: './paco-duques.component.html',
+  styleUrl: './paco-duques.component.scss'
 })
-export class MuseusComponent {
+export class PacoDuquesComponent {
 
 }

@@ -16,6 +16,12 @@
     padding-top: var(--header-height); 
     text-align: center;
   }
+
+  .nav__user-email {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color .4s;
+  }  
   
   .main__bg {
     position: absolute;
@@ -287,4 +293,20 @@
       margin-inline: auto;
     }
   }
+
+  .logout-button {
+    background-color: transparent;
+    color: #61380B;
+    font-weight: var(--font-semi-bold);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  
+    &:hover {
+      color: var(--first-color);
+    }
+  }
+  
   

@@ -1,47 +1,35 @@
 <header class="header" id="header">
   <nav class="nav container">
-      <a routerLink="/home" class="nav__logo">
-          <img src="assets/logo1.png" class="nav__logo-img">
-      </a>
-      <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a routerLink="/museus" class="nav__link">Museus</a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">Obras</a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">Eventos</a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">Bilhetes</a>
-          </li>
-        </ul>
-          <ul class="nav__list">
-              <li class="nav__item"><a href="museum.php" class="nav__link">Museus</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Obras</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Eventos</a></li>
-              <li class="nav__item"><a href="#" class="nav__link">Bilhetes</a></li>
-          </ul>
-      </div>
-      <div class="nav__actions">
-          <!-- Dropdown Trigger -->
-          <div class="nav__profile" *ngIf="authService.getAuthStatus() | async">
-              <i class="ri-user-line" id="profile-btn"></i>
-              <!-- Dropdown Menu -->
-              <div class="profile-dropdown">
-                  <a routerLink="/profile" class="dropdown-link">Perfil</a>
-                  <a (click)="logout()" class="dropdown-link">Logout</a>
-              </div>
-          </div>
-          <i class="ri-user-line nav__login" id="login-btn" *ngIf="!(authService.getAuthStatus() | async)"></i>
-      </div>
+    <a routerLink="/home" class="nav__logo">
+      <img src="assets/logo1.png" class="nav__logo-img">
+    </a>
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a routerLink="/museus" class="nav__link">Museus</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Obras</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Eventos</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" class="nav__link">Bilhetes</a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav__actions">
+      <i *ngIf="!isLoggedIn" class="ri-user-line nav__login" id="login-btn"></i>
+      <span *ngIf="isLoggedIn" class="nav__email">{{ loggedInName }}</span>
+      <button *ngIf="isLoggedIn" class="logout-button" (click)="onLogout()">Logout</button>
+    </div>
   </nav>
 </header>
 
 <!--==================== LOGIN ====================-->
-<div class="login" id="login">
+
+<div *ngIf="!isLoggedIn" class="login" id="login">
   <form (ngSubmit)="onSubmitLogin()" class="login__form">
     <h2 class="login__title">Iniciar Sessão</h2>
     <div class="login__group">
@@ -60,7 +48,6 @@
       </p>
       <br>
       <button type="submit" class="login__button">Entrar</button>
-      <p>{{ loginMessage }}</p>
     </div>
   </form>
   <i class="ri-close-line login__close" id="login-close"></i>

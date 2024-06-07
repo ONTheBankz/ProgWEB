@@ -33,16 +33,12 @@
 
 .museum-card:hover {
     transform: scale(1.05); /* Aumenta ligeiramente a caixa ao passar o mouse */
+    transition: transform 0.3s ease; 
 }
 
 .museum-image {
     width: 100%;
     height: 200px;
-    transition: transform 0.3s ease; /* Para animação suave ao passar o mouse */
-}
-
-.museum-image:hover {
-    transform: scale(1.05); /* Aumenta ligeiramente a imagem ao passar o mouse */
 }
 
 .museum-info {
@@ -70,16 +66,18 @@
     justify-content: flex-end;
 }
 
-.ticket-button {
+
+.ticket {
     padding: 6px 12px;
-    background-color:#00000015;
+    background-color:#61380B;
     color: white;
     text-decoration: none;
     font-size: 16px;
-    border: none;
+    border-radius: 7px;
     cursor: pointer;
+    font-family: "Syne", sans-serif;
 }
 
-.ticket-button:hover {
-    background-color: #0b0b3b2a;
+.ticket:hover {
+    background-color: #442707;
 }
