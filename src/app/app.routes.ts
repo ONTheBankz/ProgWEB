@@ -15,8 +15,7 @@ export const routes: Routes = [
   { path: 'museus', component: MuseusComponent },
   { path: 'paco_duques', component: PacoDuquesComponent },
   { path: 'mafra', component: MafraComponent },
-  { path: 'biscainhos', component: BiscainhosComponent }
+  { path: 'biscainhos', component: BiscainhosComponent },
   { path: 'ddiogo_sousa', component: DDiogoSousaComponent },
-
 ];
 
