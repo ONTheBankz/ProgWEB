@@ -7,6 +7,7 @@ import { MafraComponent } from './mafra/mafra.component';
 import { BiscainhosComponent } from './biscainhos/biscainhos.component';
 import { DiogoSousaComponent } from './diogo-sousa/diogo-sousa.component';
 
+
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -16,5 +17,6 @@ export const routes: Routes = [
   { path: 'mafra', component: MafraComponent },
   { path: 'biscainhos', component: BiscainhosComponent },
   { path: 'diogo_sousa', component: DiogoSousaComponent },
+
 ];
 

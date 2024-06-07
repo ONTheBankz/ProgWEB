@@ -3,16 +3,21 @@ import { FirestoreService } from '../services/firestore.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router'; // Adicione RouterModule
-import Swal from 'sweetalert2';
+import Swal from 'sweetalert2'; 
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule] // Certifique-se de importar o RouterModule
+  imports: [CommonModule, FormsModule, RouterModule, RouterLink, RouterOutlet] 
 })
+
 export class HeaderComponent implements AfterViewInit, OnInit {
+
   collectionData: any[] = [];
   name: string = '';
   surname: string = '';
@@ -23,7 +28,7 @@ export class HeaderComponent implements AfterViewInit, OnInit {
   loggedInName: string = ''; // Variável para armazenar o nome do user logado
   loggedInEmail: string = ''; // Variável para armazenar o email do user logado
 
-  constructor(private el: ElementRef, private firestoreService: FirestoreService, private router: Router) { }
+  constructor(private el: ElementRef, private firestoreService: FirestoreService, private router: Router,  public authService: AuthService) { }
 
   ngOnInit(): void {
     if (typeof window !== 'undefined' && 'localStorage' in window) {
@@ -145,3 +150,4 @@ export class HeaderComponent implements AfterViewInit, OnInit {
     });
   }
 }
+
