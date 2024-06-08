@@ -6,7 +6,8 @@ import { PacoDuquesComponent } from './paco-duques/paco-duques.component';
 import { MafraComponent } from './mafra/mafra.component';
 import { BiscainhosComponent } from './biscainhos/biscainhos.component';
 import { DiogoSousaComponent } from './diogo-sousa/diogo-sousa.component';
-
+import { ConcertoSeisComponent } from './concerto-seis/concerto-seis.component';
+import { CarrilhaoComponent } from './carrilhao/carrilhao.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,9 @@ export const routes: Routes = [
   { path: 'mafra', component: MafraComponent },
   { path: 'biscainhos', component: BiscainhosComponent },
   { path: 'diogo_sousa', component: DiogoSousaComponent },
+  { path: 'concerto_seis', component: ConcertoSeisComponent },
+  { path: 'carrilhao', component: CarrilhaoComponent },
+
 
 ];
 

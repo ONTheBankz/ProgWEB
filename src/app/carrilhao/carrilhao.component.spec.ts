@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DDiogoSousaComponent } from './d.diogo-sousa.component';
+import { CarrilhaoComponent } from './carrilhao.component';
 
-describe('DDiogoSousaComponent', () => {
-  let component: DDiogoSousaComponent;
-  let fixture: ComponentFixture<DDiogoSousaComponent>;
+describe('CarrilhaoComponent', () => {
+  let component: CarrilhaoComponent;
+  let fixture: ComponentFixture<CarrilhaoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DDiogoSousaComponent]
+      imports: [CarrilhaoComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DDiogoSousaComponent);
+    fixture = TestBed.createComponent(CarrilhaoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
