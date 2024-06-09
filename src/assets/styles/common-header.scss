@@ -23,6 +23,17 @@
     transition: color .4s;
   }  
   
+  .nav__email {
+    color: #000000;
+    text-decoration: none;
+  }
+
+
+  .nav__email:hover {
+    color: #666;
+    text-decoration: none;
+  }
+
   .main__bg {
     position: absolute;
     top: 0;

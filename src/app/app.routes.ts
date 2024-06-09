@@ -11,7 +11,7 @@ import { CarrilhaoComponent } from './carrilhao/carrilhao.component';
 import { PlataoComponent } from './platao/platao.component';
 import { CamilaComponent } from './camila/camila.component';
 import { ObrasComponent } from './obras/obras.component';
-
+import { ClienteComponent } from './cliente/cliente.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,5 +27,6 @@ export const routes: Routes = [
   { path: 'platao', component: PlataoComponent },
   { path: 'camila', component: CamilaComponent },
   { path: 'obras', component: ObrasComponent },
+  { path: 'cliente', component: ClienteComponent },  
 ];
 

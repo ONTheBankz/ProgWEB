@@ -11,14 +11,11 @@
         <li class="nav__item">
           <a routerLink="/obras" class="nav__link">Obras</a>
         </li>
-        <li class="nav__item">
-          <a href="#" class="nav__link">Eventos</a>
-        </li>
       </ul>
     </div>
     <div class="nav__actions">
       <i *ngIf="!isLoggedIn" class="ri-user-line nav__login" id="login-btn"></i>
-      <span *ngIf="isLoggedIn" class="nav__email">{{ loggedInName }}</span>
+      <a *ngIf="isLoggedIn" routerLink="/cliente" class="nav__email">{{ loggedInName }}</a>
       <button *ngIf="isLoggedIn" class="logout-button" (click)="onLogout()">Logout</button>
     </div>
   </nav>

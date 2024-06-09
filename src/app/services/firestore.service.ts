@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collectionData, collection, query, where, addDoc } from '@angular/fire/firestore';
+import { Firestore, collectionData, collection, query, where, addDoc, updateDoc, doc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -28,6 +28,18 @@ export class FirestoreService {
   getAvaliations(museum: string): Observable<any[]> {
     const avaliationRef = collection(this.firestore, 'avaliation');
     const q = query(avaliationRef, where('museum', '==', museum));
+    return collectionData(q, { idField: 'id' }) as Observable<any[]>;
+  }
+
+  getAvaliationsCliente(email: string): Observable<any[]> {
+    const avaliationRef = collection(this.firestore, 'avaliation');
+    const q = query(avaliationRef, where('email', '==', email));
+    return collectionData(q, { idField: 'id' }) as Observable<any[]>;
+  }
+
+  getUser(email: string): Observable<any[]> {
+    const usersRef = collection(this.firestore, 'user');
+    const q = query(usersRef, where('email', '==', email));
     return collectionData(q, { idField: 'id' }) as Observable<any[]>;
   }
 }

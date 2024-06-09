@@ -11,15 +11,6 @@
     text-align: center;
   }
 
-  .begin-page {
-    margin-bottom: 100px;
-  }
-
-  .begin-page img {
-    width: 900px;
-    height: 500px;
-  }
-  
   .home-section h1 {
     font-size: 36px;
     font-weight: bold;
@@ -34,55 +25,110 @@
     margin-bottom: 20px;
   }
 
-  .home-section img {
-    margin-top: 70px; /* Espaçamento entre a imagem e o título */
-    display: block; /* Para garantir que a margem superior funcione corretamente */
-    margin-left: auto; /* Centraliza a imagem horizontalmente */
-    margin-right: auto; /* Centraliza a imagem horizontalmente */
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura máxima da home-section */
-    
+  .video-container {
+    max-width: 800px;
+    margin: 20px auto;
+    margin-bottom: 90px;
   }
 
+  .linha1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+    gap: 20px; /* Adiciona espaçamento entre os cartões */
+  }
+  
+  .museum-card {
+    width: calc(50% - 40px); /* Ajusta a largura para caber 2 cartões por linha com o gap */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    padding: 5px;
+    transition: transform 0.3s ease; /* Para animação suave ao passar o rato */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo dos cartões */
+  }
+  
+  .museum-card:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente a caixa ao passar o rato */
+    transition: transform 0.3s ease; 
+  }
+  
+  .museum-image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .museum-info {
+    padding: 15px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .museum-title {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .museum-address {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    flex-grow: 1;
+  }
+  
+  .ticket-button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .ticket {
+    padding: 6px 12px;
+    background-color: #61380B;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-family: "Syne", sans-serif;
+  }
+  
+  .ticket:hover {
+    background-color: #442707;
+  }
+   
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .social-media-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0; /* Espaçamento superior e inferior */
+  }
+  
+  .social-logo {
+    width: 40px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-logo:hover {
+    transform: scale(1.1); /* Aumenta ligeiramente o logo ao passar o rato */
+    transition: transform 0.3s ease;
+  }
+  
   .separator-line {
     height: 1px;
     margin-top: 20px;
     background-color: #ccc;
   }
-
-  .events-section {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 100px;
-  }
-
-  .events-section h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-  }
-
-  .event-images {
-    display: flex;
-    justify-content: center;
-  }
-
-  .event-images img {
-    width: 300px;
-    margin: 0 10px;
-    transition: transform 0.2s ease-in-out;
-  }
-
-  .event-images img:hover {
-    transform: scale(1.05);
-  }
-
-  .video-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 100px;
-  }
-
-  .video-container iframe {
-    margin-right: 50px; /* Adiciona uma margem à direita de 20px */
-}
