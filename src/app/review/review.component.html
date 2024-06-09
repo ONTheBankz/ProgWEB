@@ -1,3 +1,10 @@
+<div class="reviews-display">
+  <h2>Avaliações</h2>
+  <div *ngFor="let review of reviews" class="review-item">
+    <h3>{{ review.name }} ({{ review.value }}/5)</h3>
+    <p>{{ review.comment }}</p>
+  </div>
+</div>
 <div class="review-section">
     <h2>Deixe-nos a sua Opinião</h2>
     <form (submit)="submitReview($event)">
@@ -26,14 +33,6 @@
       </div>
       <button type="submit" class="btn btn-submit">Enviar Avaliação</button>
     </form>
-  </div>
-  
-  <div class="reviews-display">
-    <h2>Avaliações</h2>
-    <div *ngFor="let review of reviews" class="review-item">
-      <h3>{{ review.name }} ({{ review.value }}/5)</h3>
-      <p>{{ review.comment }}</p>
-    </div>
   </div>
   <br>
   
